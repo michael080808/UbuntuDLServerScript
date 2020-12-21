@@ -39,7 +39,7 @@ then
     sudo -E apt-get update
 
     # Install Intel MKL(Math Kernel Library)
-    sudo -E apt install -y intel-oneapi-mkl-devel 
+    sudo apt install -y intel-oneapi-mkl-devel 
 
     # Set Intel MKL Environment Variables
     if [ -d "/opt/intel/oneapi" ]; then
@@ -58,25 +58,25 @@ then
     sudo -E add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
     
     # Install NVIDIA CUDA
-    sudo -E apt-get -y install cuda libcusolver10 libcudnn8 libcudnn8-dev
+    sudo apt-get -y install cuda libcusolver10 libcudnn8 libcudnn8-dev
 fi
 
 # Python PIP
 sudo apt install -y python3-pip
 # Update PIP
-sudo -E -H pip3 install -U pip setuptools wheel
+sudo -H pip3 install -U pip setuptools wheel -i https://mirrors.aliyun.com/pypi/simple/
 
 # Python Numpy
 sudo apt install -y python3-numpy
 # Update Numpy
-sudo -H pip3 install -U numpy -i https://pypi.tuna.tsinghua.edu.cn/simple
+sudo -H pip3 install -U numpy -i https://mirrors.aliyun.com/pypi/simple/
 
 # Tensorflow
-sudo -H pip3 install -U tensorflow -i https://pypi.tuna.tsinghua.edu.cn/simple
+sudo -H pip3 install -U tensorflow -i https://mirrors.aliyun.com/pypi/simple/
 # PyTorch - Part 1
 sudo -E -H pip3 install -U torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
 # PyTorch - Part 2
-sudo -H pip3 install -U torchaudio===0.7.2 -i https://pypi.tuna.tsinghua.edu.cn/simple 
+sudo -H pip3 install -U torchaudio===0.7.2 -i https://mirrors.aliyun.com/pypi/simple/
 
 # Qt Creator
 sudo apt install -y qtcreator
@@ -108,9 +108,8 @@ sudo apt install -y ant
 sudo rm -rf /usr/bin/ant && sudo ln -s /usr/share/ant/bin/ant /usr/bin/ant
 
 # OpenCV Dependencies - Google Glog & Gflags
-sudo -E apt install -y libgflags-dev libgoogle-glog-dev
+sudo apt install -y libgflags-dev libgoogle-glog-dev
 # OpenCV Dependencies - Others
-sudo -E apt install -y libboost-all-dev libtesseract-dev
 
 # OpenCV Dependencies - OGRE
 git clone https://github.com/ogrecave/ogre
