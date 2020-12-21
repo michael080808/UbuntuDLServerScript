@@ -18,13 +18,13 @@ opencv_version=4.5.0
 sudo apt update
 
 # Install Base Tools
-sudo apt install build-essential net-tools git cmake cmake-qt-gui
+sudo apt install -y build-essential net-tools git cmake cmake-qt-gui
 
 # Install Java Development Kits
-sudo apt install openjdk-11-jdk
+sudo apt install -y openjdk-11-jdk
 
 # Install Python Development Environments
-sudo apt install python3.8-dev python3.8-doc python3.8-dbg python3-distutils-extra
+sudo apt install -y python3.8-dev python3.8-doc python3.8-dbg python3-distutils-extra
 
 # Intel MKL - Optional
 if [[ $(cat /proc/cpuinfo | grep "model name")=~"Intel" ]]
