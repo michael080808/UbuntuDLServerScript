@@ -116,7 +116,7 @@ git clone https://github.com/ogrecave/ogre
 sudo -E apt install -y libgles2-mesa-dev libxt-dev libxaw7-dev libsdl2-dev libfreetype-dev libfreeimage-dev nvidia-cg-toolkit
 # OGRE Build
 cd ./ogre
-git checkout ogre_version
+git checkout $ogre_version
 mkdir build
 cd ./build
 cmake ..
