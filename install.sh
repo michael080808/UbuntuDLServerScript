@@ -36,10 +36,10 @@ then
     sudo cp oneAPI.list /etc/apt/sources.list.d/
 
     # Update Sources
-    sudo -E apt-get update
+    sudo -E apt update
 
     # Install Intel MKL(Math Kernel Library)
-    sudo apt install -y intel-oneapi-mkl-devel 
+    sudo -E apt install -y intel-oneapi-mkl-devel 
 
     # Set Intel MKL Environment Variables
     if [ -d "/opt/intel/oneapi" ]; then
@@ -58,7 +58,7 @@ then
     sudo -E add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
     
     # Install NVIDIA CUDA
-    sudo apt-get -y install cuda libcusolver10 libcudnn8 libcudnn8-dev
+    sudo -E apt -y install cuda libcusolver10 libcudnn8 libcudnn8-dev
 fi
 
 # Python PIP
